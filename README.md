@@ -1,4 +1,4 @@
 # Telegram-Markovbot
 Telegram сhatbot using Markov chains
 
-https://bellioz.ru/telegram-markov-bot
+https://bellioz.github.io/psevdo-ii-na-python-dlya-telegram-chata.html
