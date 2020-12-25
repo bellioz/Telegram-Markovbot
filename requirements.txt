@@ -1,4 +1,0 @@
-pytelegrambotapi
-markovify
-PySocks
-requests
