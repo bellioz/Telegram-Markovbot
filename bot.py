@@ -14,7 +14,7 @@ API_TOKEN = 'ТОКЕН БОТА'
 BOT_ID = int(API_TOKEN.split(':')[0])
 
 # Настройка логгера
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 # Инициализация бота и диспетчера
 bot = Bot(token=API_TOKEN)
@@ -217,9 +217,11 @@ async def message(message: types.Message):
                         phrase_list.append(line)
 
             # Генерируем сообщение при помощи цепей Маркова
-            text_model = markovify.NewlineText(phrase_list, well_formed=False)
-            phrase = text_model.make_short_sentence(280)
-            return phrase
+            if phrase_list:
+                text_model = markovify.NewlineText(
+                    phrase_list, well_formed=False)
+                phrase = text_model.make_short_sentence(280)
+                return phrase
 
     # Читаем настройки конфига
     config.read('configs/' + chat_id + '.cfg')
